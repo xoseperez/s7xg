@@ -62,9 +62,8 @@ char * S7XG::getVersion() {
  */
 void S7XG::reset() {
     _send(SIP_RESET);
-    _nice_delay(250);
-    while (!_stream->available()) delay(1);
-    _flush();
+    _wait_longer = true;
+    _readLine();
 }
 
 /**

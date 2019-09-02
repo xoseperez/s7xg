@@ -24,12 +24,9 @@ along with the S7XG library.  If not, see <http://www.gnu.org/licenses/>.
 
 #if defined(ARDUINO_ARCH_ESP32) 
     HardwareSerial SerialS7XG(1);
-#elif defined(ARDUINO_ARCH_ESP8266) 
-    #include "SoftwareSerial.h"
-    SoftwareSerial SerialS7XG(4, 5);
 #elif defined(ARDUINO_AVR_LEONARDO) 
     #define SerialS7XG Serial1
-#elif defined(ARDUINO_ARCH_AVR)
+#else
     #include "SoftwareSerial.h"
     SoftwareSerial SerialS7XG(4, 5);
 #endif
@@ -57,6 +54,8 @@ void setup() {
     #if defined(ARDUINO_T_WATCH)
         Wire.begin(21, 22);
         axp.begin(Wire);
+        s7xg_power(false);
+        delay(1000);
         s7xg_power(true);
     #endif
 
@@ -69,15 +68,11 @@ void setup() {
 
     #if defined(ARDUINO_ARCH_ESP32) 
         SerialS7XG.begin(115200, SERIAL_8N1, 34, 33);
-    #elif defined (ARDUINO_ARCH_ESP8266) 
-        SerialS7XG.begin(115200);
-    #elif defined (ARDUINO_AVR_LEONARDO) 
-        SerialS7XG.begin(115200);
-    #elif defined (ARDUINO_ARCH_AVR) 
+    #else
         SerialS7XG.begin(115200);
     #endif
     module.begin(SerialS7XG);
-    //module.reset();
+    module.reset();
 
     Serial.print("Hardware: "); Serial.println(module.getHardware());
     Serial.print("Version : "); Serial.println(module.getVersion());

@@ -92,7 +92,7 @@ void setup() {
     // Set GPS in auto mode
     module.gpsMode(S7XG_GPS_MODE_AUTO);
 
-    // MAC and GPS properties can be changed on-the-fly
+    // MAC and GPS properties can be changed on-the-fly.
     // The module will report new messagesusing the changed properties
     // until GPS mode is changed.
 
