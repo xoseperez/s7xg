@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['latitude',['latitude',['../structgps__message__t.html#a60a588afd27b006c3da35f71e095f66a',1,'gps_message_t']]],
-  ['longitude',['longitude',['../structgps__message__t.html#abc187e2c1f521768c72085f2c46b5453',1,'gps_message_t']]]
+  ['hexlify',['hexlify',['../classS7XG.html#a7279759ffaa7d3f3291be3e77db965c9',1,'S7XG']]],
+  ['hour',['hour',['../structgps__message__t.html#aa13852965a1e00fcbaf8fee0a446ea02',1,'gps_message_t']]]
 ];

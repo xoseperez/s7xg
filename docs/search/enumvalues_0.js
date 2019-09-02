@@ -18,6 +18,10 @@ var searchData=
   ['s7xg_5fdr_5fsf9bw125_5fcn',['S7XG_DR_SF9BW125_CN',['../S7XG_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba6ab73504eb61a8a77b36f9d9370dc4ce',1,'S7XG.h']]],
   ['s7xg_5fdr_5fsf9bw125_5feu',['S7XG_DR_SF9BW125_EU',['../S7XG_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba0504ace2f56dbe0cc03cb437c1729a50',1,'S7XG.h']]],
   ['s7xg_5fdr_5fsf9bw125_5fus',['S7XG_DR_SF9BW125_US',['../S7XG_8h.html#a06fc87d81c62e9abb8790b6e5713c55bae0640cd585986120ac7a211c7ca808aa',1,'S7XG.h']]],
+  ['s7xg_5fgps_5fformat_5fipso',['S7XG_GPS_FORMAT_IPSO',['../S7XG_8h.html#a99fb83031ce9923c84392b4e92f956b5a5a68cb1572518a4a8a1014fc72509129',1,'S7XG.h']]],
+  ['s7xg_5fgps_5fformat_5fkiwi',['S7XG_GPS_FORMAT_KIWI',['../S7XG_8h.html#a99fb83031ce9923c84392b4e92f956b5aea6ea8b0b7354a9ee8cd7058688d86c8',1,'S7XG.h']]],
+  ['s7xg_5fgps_5fformat_5fraw',['S7XG_GPS_FORMAT_RAW',['../S7XG_8h.html#a99fb83031ce9923c84392b4e92f956b5a8f47132bea8dd984c74a81369593a8aa',1,'S7XG.h']]],
+  ['s7xg_5fgps_5fformat_5futc_5fpos',['S7XG_GPS_FORMAT_UTC_POS',['../S7XG_8h.html#a99fb83031ce9923c84392b4e92f956b5a85a13d6502664394937e1b890565dbdf',1,'S7XG.h']]],
   ['s7xg_5fgps_5fmode_5fauto',['S7XG_GPS_MODE_AUTO',['../S7XG_8h.html#adf764cbdea00d65edcd07bb9953ad2b7adca6064dd3625f947dceee3cd8b18d38',1,'S7XG.h']]],
   ['s7xg_5fgps_5fmode_5fidle',['S7XG_GPS_MODE_IDLE',['../S7XG_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a53f214c8a950ef247ebc24bb34853e46',1,'S7XG.h']]],
   ['s7xg_5fgps_5fmode_5fmanual',['S7XG_GPS_MODE_MANUAL',['../S7XG_8h.html#adf764cbdea00d65edcd07bb9953ad2b7ac6833f74d482f8228b10af11ad979ef3',1,'S7XG.h']]]

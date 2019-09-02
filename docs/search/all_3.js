@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['fix',['fix',['../structgps__message__t.html#a13eb78e08f1e3ee1756d42f4e5756320',1,'gps_message_t']]]
+  ['day',['day',['../structgps__message__t.html#a6487e70a205919d32b497d5d0e6dbd8e',1,'gps_message_t']]]
 ];

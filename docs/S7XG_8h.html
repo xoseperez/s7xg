@@ -87,8 +87,10 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ac16a3f7b8f6597e2c2fbf64de978380a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="S7XG_8h.html#ac16a3f7b8f6597e2c2fbf64de978380a">S7XG_TIMEOUT</a>&#160;&#160;&#160;300</td></tr>
-<tr class="separator:ac16a3f7b8f6597e2c2fbf64de978380a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9b4c3b8bd639811f4ddf40be5c1ab4e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="S7XG_8h.html#aa9b4c3b8bd639811f4ddf40be5c1ab4e">S7XG_SHORT_TIMEOUT</a>&#160;&#160;&#160;300</td></tr>
+<tr class="separator:aa9b4c3b8bd639811f4ddf40be5c1ab4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97dad10758a59a69be1c803dee9435f5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="S7XG_8h.html#a97dad10758a59a69be1c803dee9435f5">S7XG_LONG_TIMEOUT</a>&#160;&#160;&#160;10000</td></tr>
+<tr class="separator:a97dad10758a59a69be1c803dee9435f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a577ec7a13467f59908439b8533199ab8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="S7XG_8h.html#a577ec7a13467f59908439b8533199ab8">S7XG_RX_BUFFER_SIZE</a>&#160;&#160;&#160;128</td></tr>
 <tr class="separator:a577ec7a13467f59908439b8533199ab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2fbf00054d78227dd8417393e1cd6bda"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="S7XG_8h.html#a2fbf00054d78227dd8417393e1cd6bda">S7XG_TX_BUFFER_SIZE</a>&#160;&#160;&#160;128</td></tr>
@@ -129,6 +131,12 @@ Enumerations</h2></td></tr>
 <a class="el" href="S7XG_8h.html#adf764cbdea00d65edcd07bb9953ad2b7adca6064dd3625f947dceee3cd8b18d38">S7XG_GPS_MODE_AUTO</a>
  }</td></tr>
 <tr class="separator:adf764cbdea00d65edcd07bb9953ad2b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99fb83031ce9923c84392b4e92f956b5"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="S7XG_8h.html#a99fb83031ce9923c84392b4e92f956b5a8f47132bea8dd984c74a81369593a8aa">S7XG_GPS_FORMAT_RAW</a> = 0, 
+<a class="el" href="S7XG_8h.html#a99fb83031ce9923c84392b4e92f956b5a5a68cb1572518a4a8a1014fc72509129">S7XG_GPS_FORMAT_IPSO</a>, 
+<a class="el" href="S7XG_8h.html#a99fb83031ce9923c84392b4e92f956b5aea6ea8b0b7354a9ee8cd7058688d86c8">S7XG_GPS_FORMAT_KIWI</a>, 
+<a class="el" href="S7XG_8h.html#a99fb83031ce9923c84392b4e92f956b5a85a13d6502664394937e1b890565dbdf">S7XG_GPS_FORMAT_UTC_POS</a>
+ }</td></tr>
+<tr class="separator:a99fb83031ce9923c84392b4e92f956b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -152,7 +160,23 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="S7XG_8h_source.html#l00041">41</a> of file <a class="el" href="S7XG_8h_source.html">S7XG.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="S7XG_8h_source.html#l00042">42</a> of file <a class="el" href="S7XG_8h_source.html">S7XG.h</a>.</p>
+
+</div>
+</div>
+<a id="a97dad10758a59a69be1c803dee9435f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97dad10758a59a69be1c803dee9435f5">&#9670;&nbsp;</a></span>S7XG_LONG_TIMEOUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define S7XG_LONG_TIMEOUT&#160;&#160;&#160;10000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="S7XG_8h_source.html#l00031">31</a> of file <a class="el" href="S7XG_8h_source.html">S7XG.h</a>.</p>
 
 </div>
 </div>
@@ -168,18 +192,18 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="S7XG_8h_source.html#l00031">31</a> of file <a class="el" href="S7XG_8h_source.html">S7XG.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="S7XG_8h_source.html#l00032">32</a> of file <a class="el" href="S7XG_8h_source.html">S7XG.h</a>.</p>
 
 </div>
 </div>
-<a id="ac16a3f7b8f6597e2c2fbf64de978380a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac16a3f7b8f6597e2c2fbf64de978380a">&#9670;&nbsp;</a></span>S7XG_TIMEOUT</h2>
+<a id="aa9b4c3b8bd639811f4ddf40be5c1ab4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9b4c3b8bd639811f4ddf40be5c1ab4e">&#9670;&nbsp;</a></span>S7XG_SHORT_TIMEOUT</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define S7XG_TIMEOUT&#160;&#160;&#160;300</td>
+          <td class="memname">#define S7XG_SHORT_TIMEOUT&#160;&#160;&#160;300</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -200,7 +224,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="S7XG_8h_source.html#l00032">32</a> of file <a class="el" href="S7XG_8h_source.html">S7XG.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="S7XG_8h_source.html#l00033">33</a> of file <a class="el" href="S7XG_8h_source.html">S7XG.h</a>.</p>
 
 </div>
 </div>
@@ -237,7 +261,7 @@ Variables</h2></td></tr>
 <tr><td class="fieldname"><a id="a06fc87d81c62e9abb8790b6e5713c55bad8bc1a176c5d5aad668aad1a40d5cfa7"></a>S7XG_DR_SF8BW500_US&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="S7XG_8h_source.html#l00048">48</a> of file <a class="el" href="S7XG_8h_source.html">S7XG.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="S7XG_8h_source.html#l00049">49</a> of file <a class="el" href="S7XG_8h_source.html">S7XG.h</a>.</p>
 
 </div>
 </div>
@@ -258,7 +282,29 @@ Variables</h2></td></tr>
 <tr><td class="fieldname"><a id="adf764cbdea00d65edcd07bb9953ad2b7adca6064dd3625f947dceee3cd8b18d38"></a>S7XG_GPS_MODE_AUTO&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="S7XG_8h_source.html#l00085">85</a> of file <a class="el" href="S7XG_8h_source.html">S7XG.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="S7XG_8h_source.html#l00091">91</a> of file <a class="el" href="S7XG_8h_source.html">S7XG.h</a>.</p>
+
+</div>
+</div>
+<a id="a99fb83031ce9923c84392b4e92f956b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99fb83031ce9923c84392b4e92f956b5">&#9670;&nbsp;</a></span>anonymous enum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a99fb83031ce9923c84392b4e92f956b5a8f47132bea8dd984c74a81369593a8aa"></a>S7XG_GPS_FORMAT_RAW&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a99fb83031ce9923c84392b4e92f956b5a5a68cb1572518a4a8a1014fc72509129"></a>S7XG_GPS_FORMAT_IPSO&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a99fb83031ce9923c84392b4e92f956b5aea6ea8b0b7354a9ee8cd7058688d86c8"></a>S7XG_GPS_FORMAT_KIWI&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a99fb83031ce9923c84392b4e92f956b5a85a13d6502664394937e1b890565dbdf"></a>S7XG_GPS_FORMAT_UTC_POS&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="S7XG_8h_source.html#l00097">97</a> of file <a class="el" href="S7XG_8h_source.html">S7XG.h</a>.</p>
 
 </div>
 </div>
@@ -275,7 +321,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="S7XG_8h_source.html#l00095">95</a> of file <a class="el" href="S7XG_8h_source.html">S7XG.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="S7XG_8h_source.html#l00108">108</a> of file <a class="el" href="S7XG_8h_source.html">S7XG.h</a>.</p>
 
 </div>
 </div>

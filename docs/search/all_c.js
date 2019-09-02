@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unhexlify',['unhexlify',['../classS7XG.html#a5365086da88ec809d78ff43ee3056813',1,'S7XG']]]
+  ['txcycle',['txCycle',['../classS7XG.html#acf59d41dbba8643c2659b11da5918692',1,'S7XG']]]
 ];
