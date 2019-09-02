@@ -81,8 +81,11 @@ char * S7XG::getHardware() {
  * @return              True if everything OK
  */
 bool S7XG::sleep(uint32_t seconds) {
-    char * buffer = _sendAndReturn(SIP_SLEEP, seconds);
-    return (buffer == strstr(buffer, "sleep"));
+    char command[32];
+    snprintf_P(command, sizeof(command), SIP_SLEEP, seconds);
+    _send(command);
+    _readLine();
+    return (_buffer == strstr(_buffer, "sleep"));
 }
 
 /**
@@ -90,7 +93,7 @@ bool S7XG::sleep(uint32_t seconds) {
  * @return              True if everything OK
  */
 bool S7XG::wake() {
-    return _sendAndACK(SIP_GET_VER)
+    return _sendAndACK(SIP_GET_VER);
 }
 
 /**
@@ -319,11 +322,7 @@ gps_message_t S7XG::gpsData() {
     // DD UTC( 2017/11/23 06:59:06 ) LAT( 24.988825 N ) LONG( 121.308326 E ) POSITIONING( 2.9s )
 
     // Replace spaces with commas
-    char * p = buffer;
-    while (*p != 0) {
-        if (*p == ' ') *p = ',';
-        *p++;
-    }
+    for (char * p = buffer; p = strchr(p, ' '); ++p) *p = ',';
 
     // Store message here
     gps_message_t message;
@@ -337,20 +336,20 @@ gps_message_t S7XG::gpsData() {
         
         tok = strtok(NULL, ","); // timestamp
         // TODO
-        tok = strtok(NULL, ","); // )
-        tok = strtok(NULL, ","); // LAT(
+        strtok(NULL, ","); // )
+        strtok(NULL, ","); // LAT(
         tok = strtok(NULL, ","); // latitude
         message.latitude = atof(tok);
         tok = strtok(NULL, ","); // latitude sign
         if ('S' == tok[0]) message.latitude = -message.latitude;
-        tok = strtok(NULL, ","); // )
-        tok = strtok(NULL, ","); // LONG(
+        strtok(NULL, ","); // )
+        strtok(NULL, ","); // LONG(
         tok = strtok(NULL, ","); // longitude
         message.longitude = atof(tok);
         tok = strtok(NULL, ","); // longitude sign
         if ('W' == tok[0]) message.longitude = -message.longitude;
-        tok = strtok(NULL, ","); // )
-        tok = strtok(NULL, ","); // POSITIONING(
+        strtok(NULL, ","); // )
+        strtok(NULL, ","); // POSITIONING(
 
     }
 

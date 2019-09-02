@@ -188,7 +188,7 @@ const char MAC_SET_POWER_INDEX[] PROGMEM =        "mac set_power_index %d";     
 const char MAC_GET_POWER_INDEX[] PROGMEM =        "mac get_power_index";            // 3.2.74
 
 const char GPS_SET_LEVEL_SHIFT[] PROGMEM =        "gps set_level_shift %s";         // 3.3.1
-const char GPS_SET_NMEA[] PROGMEM =               "gps set_nmea";                   // 3.3.2
+const char GPS_SET_NMEA[] PROGMEM =               "gps set_nmea %s";                // 3.3.2
 const char GPS_SET_PORT_UPLINK[] PROGMEM =        "gps set_port_uplink %d";         // 3.3.3
 const char GPS_SET_FORMAT_UPLINK[] PROGMEM =      "gps set_format_uplink %s";       // 3.3.4
 const char GPS_SET_POSITIONING_CYCLE[] PROGMEM =  "gps set_positioning_cycle %ul";  // 3.3.5
