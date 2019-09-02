@@ -1,0 +1,75 @@
+#######################################
+# Classes (KEYWORD1)
+#######################################
+
+S7XG KEYWORD1
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+gps_message_t
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+begin KEYWORD2
+reset KEYWORD2
+getResponse KEYWORD2
+getVersion KEYWORD2
+getHardware KEYWORD2
+getEUI KEYWORD2
+
+macSend KEYWORD2
+macSend KEYWORD2
+macJoinABP KEYWORD2
+macJoinOTAA KEYWORD2
+macSave KEYWORD2
+macPower KEYWORD2
+macDatarate KEYWORD2
+macADR KEYWORD2
+macChannelStatus KEYWORD2
+macDutyCycle KEYWORD2
+macBand KEYWORD2
+
+gpsInit KEYWORD2
+gpsMode KEYWORD2
+gpsData KEYWORD2
+
+hexlify KEYWORD2
+unhexlify KEYWORD2
+
+#######################################
+# Instances (KEYWORD2)
+#######################################
+
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+S7XG_GPS_MODE_IDLE
+S7XG_GPS_MODE_MANUAL
+S7XG_GPS_MODE_AUTO
+
+S7XG_DR_SF12BW125_EU
+S7XG_DR_SF11BW125_EU
+S7XG_DR_SF10BW125_EU
+S7XG_DR_SF9BW125_EU
+S7XG_DR_SF8BW125_EU
+S7XG_DR_SF7BW125_EU
+S7XG_DR_SF7BW250_EU
+
+S7XG_DR_SF12BW125_CN
+S7XG_DR_SF11BW125_CN
+S7XG_DR_SF10BW125_CN
+S7XG_DR_SF9BW125_CN
+S7XG_DR_SF8BW125_CN
+S7XG_DR_SF7BW125_CN
+
+S7XG_DR_SF10BW125_US
+S7XG_DR_SF9BW125_US
+S7XG_DR_SF8BW125_US
+S7XG_DR_SF7BW125_US
+S7XG_DR_SF8BW500_US

@@ -1,0 +1,11 @@
+# Precompiled Headers
+*.gch
+*.pch
+
+# PlatformIO folders
+.pio*
+
+# Project files
+credentials.h
+.vscode
+

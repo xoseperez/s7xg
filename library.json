@@ -1,0 +1,24 @@
+{
+    "name": "S7XG",
+    "keywords": "acsip,s76g,s78g,s76s,s78s,lora,lorawan,gps",
+    "description": "AcSIP S7XG LoRaWAN/GPS module library",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/xoseperez/s7xg.git"
+    },
+    "version": "0.1.0",
+    "license": "LGPL-3.0",
+    "frameworks": "arduino",
+    "platforms": ["esp32"],
+    "dependencies": [
+    ],
+    "authors": {
+        "name": "Xose Perez",
+        "email": "xose.perez@gmail.com",
+        "url": "http://tinkerman.cat",
+        "maintainer": true
+    },
+    "examples": [
+        "examples/*/*.ino"
+    ]
+}
