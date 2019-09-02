@@ -322,7 +322,7 @@ gps_message_t S7XG::gpsData() {
     // DD UTC( 2017/11/23 06:59:06 ) LAT( 24.988825 N ) LONG( 121.308326 E ) POSITIONING( 2.9s )
 
     // Replace spaces with commas
-    for (char * p = buffer; p = strchr(p, ' '); ++p) *p = ',';
+    for (char * p = buffer; (p = strchr(p, ' ')); ++p) *p = ',';
 
     // Store message here
     gps_message_t message;
@@ -433,14 +433,13 @@ uint8_t S7XG::_readLine(uint32_t timeout) {
     uint8_t flag = 0;
     uint32_t start = millis();
 
-    char ch_buff[6];
-
     while (millis() - start < timeout) {
         if (_stream->available()) {
             uint8_t ch = _stream->read();
 
             #if defined(S7XG_DEBUG_SERIAL)
                 if ((31 < ch) && (ch < 127)) {
+                    char ch_buff[6];
                     snprintf(ch_buff, sizeof(ch_buff), "%c", ch);
                     S7XG_DEBUG(ch_buff);
                 }
