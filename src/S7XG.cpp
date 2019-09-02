@@ -174,7 +174,8 @@ bool S7XG::macJoinABP(const char * devaddr, const char * nwkskey, const char * a
     if (!_sendAndACK(MAC_SET_APPSKEY, appskey)) return false;
 
     _send(MAC_JOIN_ABP);
-    _readLine(5000);
+    _wait_longer = true;
+    _readLine();
     if (0 != strcmp(_buffer, "Ok")) return false;
     _readLine();
     return (0 == strcmp(_buffer, "accepted"));
@@ -195,9 +196,11 @@ bool S7XG::macJoinOTAA(const char * deveui, const char * appeui, const char * ap
     if (!_sendAndACK(MAC_SET_APPKEY, appkey)) return false;
 
     _send(MAC_JOIN_OTAA);
-    _readLine(5000);
+    _wait_longer = true;
+    _readLine();
     if (0 != strcmp(_buffer, "Ok")) return false;
-    _readLine(10000);
+    _wait_longer = true;
+    _readLine();
     return (0 == strcmp(_buffer, "accepted"));
 
 }
@@ -279,6 +282,18 @@ uint16_t S7XG::macBand() {
     return atol(_sendAndReturn(MAC_GET_BAND));
 }
 
+/**
+ * @brief               Sets the auto uplink cycle in seconds (set to 0 to disable)
+ * @param[in] seconds   Seconds between messages
+ * @return              True if everything OK
+ */
+bool S7XG::txCycle(uint32_t seconds) {
+    
+    if (!_sendAndACK(MAC_SET_TX_MODE, 0 == seconds ? "no_cycle" : "cycle"));
+    return _sendAndACK(MAC_SET_TX_INTERVAL, seconds * 1000UL);
+    
+}
+
 // ----------------------------------------------------------------------------
 // GPS
 // ----------------------------------------------------------------------------
@@ -292,8 +307,31 @@ bool S7XG::gpsInit() {
     if (!_sendAndACK(GPS_SET_START, "hot")) return false;
     if (!_sendAndACK(GPS_SET_SATELLITE_SYSTEM, "gps")) return false;
     if (!_sendAndACK(GPS_SET_NMEA, "rmc")) return false;
-    if (!_sendAndACK(GPS_SET_MODE, "manual")) return false;
+    if (!_sendAndACK(GPS_SET_POSITIONING_CYCLE, 5000)) return false;
+    gpsMode(S7XG_GPS_MODE_MANUAL);
     return true;
+}
+
+/**
+ * @brief               Sets the auto uplink port
+ * @param[in] port      port to send messages to when in auto mode
+ * @return              True if everything OK
+ */
+bool S7XG::gpsPort(uint8_t port) {
+    return _sendAndACK(GPS_SET_PORT_UPLINK, port);
+}
+
+/**
+ * @brief               Sets the auto uplink format
+ * @param[in] format    One of S7XG_GPS_FORMAT_RAW, S7XG_GPS_FORMAT_IPSO, S7XG_GPS_FORMAT_KIWI or S7XG_GPS_FORMAT_UTC_POS
+ * @return              True if everything OK
+ */
+bool S7XG::gpsFormat(uint8_t format) {
+    return _sendAndACK(GPS_SET_FORMAT_UPLINK, 
+        format == S7XG_GPS_FORMAT_RAW ? "raw" : 
+        format == S7XG_GPS_FORMAT_IPSO ? "ipso" : 
+        format == S7XG_GPS_FORMAT_KIWI ? "kiwi" : 
+        "utc_pos");
 }
 
 /**
@@ -303,6 +341,7 @@ bool S7XG::gpsInit() {
  */
 bool S7XG::gpsMode(uint8_t mode) {
     
+    _wait_longer = true;
     return _sendAndACK(GPS_SET_MODE, 
         mode == S7XG_GPS_MODE_IDLE ? "idle" : 
         mode == S7XG_GPS_MODE_MANUAL ? "manual" : 
@@ -425,15 +464,16 @@ void S7XG::_flush() {
 /**
  * @brief               Reads a line from the module
  * @details             Stores in the internal buffer from the first ">> " to the next 0x0A.
- * @param[in] timeout   Times out after this milliseconds
  * @return              Number of characters in the buffer
  */
-uint8_t S7XG::_readLine(uint32_t timeout) {
+uint8_t S7XG::_readLine() {
 
     _buffer[0] = 0;
     uint8_t pointer = 0;
     uint8_t flag = 0;
     uint32_t start = millis();
+    uint32_t timeout = _wait_longer ? S7XG_LONG_TIMEOUT : S7XG_SHORT_TIMEOUT;
+    _wait_longer = false;
 
     while (millis() - start < timeout) {
         if (_stream->available()) {

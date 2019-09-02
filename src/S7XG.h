@@ -27,7 +27,8 @@ along with the S7XG library.  If not, see <http://www.gnu.org/licenses/>.
 // Configuration
 // ----------------------------------------------------------------------------
 
-#define S7XG_TIMEOUT                          300
+#define S7XG_SHORT_TIMEOUT                    300
+#define S7XG_LONG_TIMEOUT                     10000
 #define S7XG_RX_BUFFER_SIZE                   128
 #define S7XG_TX_BUFFER_SIZE                   128
 
@@ -93,6 +94,13 @@ enum {
   S7XG_GPS_MODE_AUTO
 };
 
+enum {
+  S7XG_GPS_FORMAT_RAW = 0,
+  S7XG_GPS_FORMAT_IPSO,
+  S7XG_GPS_FORMAT_KIWI,
+  S7XG_GPS_FORMAT_UTC_POS,
+};
+
 // ----------------------------------------------------------------------------
 // Commands
 // ----------------------------------------------------------------------------
@@ -112,7 +120,7 @@ const char SIP_GET_GPIO[] PROGMEM =               "sip get_gpio %c %d";         
 const char SIP_GET_UUID[] PROGMEM =               "sip get_uuid";                   // 3.1.13
 const char SIP_SET_STORAGE[] PROGMEM =            "sip set_storage %s";             // 3.1.14
 const char SIP_GET_STORAGE[] PROGMEM =            "sip get_storage";                // 3.1.15
-const char SIP_SET_BATT_RESISTOR[] PROGMEM =      "sip set_batt_resistor %ul %ul";  // 3.1.16
+const char SIP_SET_BATT_RESISTOR[] PROGMEM =      "sip set_batt_resistor %lu %lu";  // 3.1.16
 const char SIP_GET_BATT_RESISTOR[] PROGMEM =      "sip get_batt_resistor";          // 3.1.17
 const char SIP_GET_BATT_VOLT[] PROGMEM =          "sip get_batt_volt";              // 3.1.18
 
@@ -183,9 +191,9 @@ const char MAC_GET_MAX_EIRP[] PROGMEM =           "mac get_max_eirp";           
 const char MAC_SET_CH_COUNT[] PROGMEM =           "mac set_ch_count %d %d";         // 3.2.64
 const char MAC_GET_CH_COUNT[] PROGMEM =           "mac get_ch_count";               // 3.2.65
 const char MAC_SET_KEYS[] PROGMEM =               "mac set_keys %s %s %s %s %s %s"; // 3.2.66
-const char MAC_SET_TX_INTERVAL[] PROGMEM =        "mac set_tx_interval %ul";        // 3.2.67
+const char MAC_SET_TX_INTERVAL[] PROGMEM =        "mac set_tx_interval %lu";        // 3.2.67
 const char MAC_GET_TX_INTERVAL[] PROGMEM =        "mac get_tx_interval";            // 3.2.68
-const char MAC_SET_RX1_FREQ[] PROGMEM =           "mac set_rx1_freq %ul %ul %d";    // 3.2.69
+const char MAC_SET_RX1_FREQ[] PROGMEM =           "mac set_rx1_freq %lu %lu %d";    // 3.2.69
 const char MAC_GET_RX1_FREQ[] PROGMEM =           "mac get_rx1_freq";               // 3.2.70
 const char MAC_SET_AUTO_JOIN[] PROGMEM =          "mac set_auto_join %s %s %d";     // 3.2.71
 const char MAC_GET_AUTO_JOIN[] PROGMEM =          "mac get_auto_join";              // 3.2.72
@@ -196,7 +204,7 @@ const char GPS_SET_LEVEL_SHIFT[] PROGMEM =        "gps set_level_shift %s";     
 const char GPS_SET_NMEA[] PROGMEM =               "gps set_nmea %s";                // 3.3.2
 const char GPS_SET_PORT_UPLINK[] PROGMEM =        "gps set_port_uplink %d";         // 3.3.3
 const char GPS_SET_FORMAT_UPLINK[] PROGMEM =      "gps set_format_uplink %s";       // 3.3.4
-const char GPS_SET_POSITIONING_CYCLE[] PROGMEM =  "gps set_positioning_cycle %ul";  // 3.3.5
+const char GPS_SET_POSITIONING_CYCLE[] PROGMEM =  "gps set_positioning_cycle %lu";  // 3.3.5
 const char GPS_SET_MODE[] PROGMEM =               "gps set_mode %s";                // 3.3.6
 const char GPS_GET_MODE[] PROGMEM =               "gps get_mode";                   // 3.3.7
 const char GPS_GET_DATA[] PROGMEM =               "gps get_data dd";                // 3.3.8
@@ -238,9 +246,12 @@ class S7XG {
     bool macChannelStatus(uint8_t channel, bool status);
     bool macDutyCycle(bool dc);
     uint16_t macBand();
+    bool txCycle(uint32_t seconds);
 
     // GPS
     bool gpsInit();
+    bool gpsPort(uint8_t port);
+    bool gpsFormat(uint8_t format);
     bool gpsMode(uint8_t mode);
     uint8_t gpsMode();
     gps_message_t gpsData();
@@ -258,11 +269,12 @@ class S7XG {
     template<typename T> char * _sendAndReturn(T * s);
     bool _sendAndACK(PGM_P format_P, ...);
 
-    uint8_t _readLine(uint32_t timeout = S7XG_TIMEOUT);
+    uint8_t _readLine();
     uint8_t _nibble(char ch);
     void _nice_delay(uint32_t ms);
 
     Stream *_stream;
+    bool _wait_longer = false;
     char _buffer[S7XG_RX_BUFFER_SIZE];
     char _eui[17] = {0};
 

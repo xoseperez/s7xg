@@ -9,6 +9,7 @@ install:
     - pip install -U platformio
 script:
     - pushd examples/gps_basic && pio run && popd
+    - pushd examples/gps_auto && pio run && popd
     - pushd examples/lorawan_abp && pio run && popd
     - pushd examples/lorawan_otaa && pio run && popd
     - pushd examples/module_info && pio run && popd
