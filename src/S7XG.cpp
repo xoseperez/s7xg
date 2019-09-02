@@ -330,12 +330,11 @@ gps_message_t S7XG::gpsData() {
     // Tokenize
     char * tok = strtok(buffer, ",");
     message.fix = (0 == strcmp(tok, "DD"));
-    tok = strtok(NULL, ","); // UTC( or (
+    strtok(NULL, ","); // UTC( or (
     
     if (message.fix) {
         
-        tok = strtok(NULL, ","); // timestamp
-        // TODO
+        strtok(NULL, ","); // TODO timestamp 
         strtok(NULL, ","); // )
         strtok(NULL, ","); // LAT(
         tok = strtok(NULL, ","); // latitude
