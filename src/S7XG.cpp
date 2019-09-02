@@ -289,6 +289,8 @@ uint16_t S7XG::macBand() {
  */
 bool S7XG::gpsInit() {
     if (!_sendAndACK(GPS_SET_LEVEL_SHIFT, "on")) return false;
+    if (!_sendAndACK(GPS_SET_START, "hot")) return false;
+    if (!_sendAndACK(GPS_SET_SATELLITE_SYSTEM, "gps")) return false;
     if (!_sendAndACK(GPS_SET_NMEA, "rmc")) return false;
     if (!_sendAndACK(GPS_SET_MODE, "manual")) return false;
     return true;
@@ -315,45 +317,46 @@ bool S7XG::gpsMode(uint8_t mode) {
 gps_message_t S7XG::gpsData() {
     
     char * buffer = _sendAndReturn(GPS_GET_DATA);
+    gps_message_t message;
 
     // No data yet:
     // POSITIONING ( 14.8s )
     // GPS data OK:
-    // DD UTC( 2017/11/23 06:59:06 ) LAT( 24.988825 N ) LONG( 121.308326 E ) POSITIONING( 2.9s )
-
-    // Replace spaces with commas
-    for (char * p = buffer; (p = strchr(p, ' ')); ++p) *p = ',';
-
-    // Store message here
-    gps_message_t message;
+    // DD UTC( 2019/09/02 12:33:34 ) LAT( 41.601215 N ) LONG( 2.622485 E ) POSITIONING( 3.6s )
 
     // Tokenize
-    char * tok = strtok(buffer, ",");
+    char * tok = strtok(buffer, " ");
     message.fix = (0 == strcmp(tok, "DD"));
-    strtok(NULL, ","); // UTC( or (
+    tok = strtok(NULL, " "); // UTC( or (
+    if (!tok) return message;
     
     if (message.fix) {
         
-        strtok(NULL, ","); // TODO timestamp 
-        strtok(NULL, ","); // )
-        strtok(NULL, ","); // LAT(
-        tok = strtok(NULL, ","); // latitude
+        char * date = strtok(NULL, " "); // date
+        char * time = strtok(NULL, " "); // time
+        sscanf(date, "%d/%d/%d", &message.year, &message.month, &message.day);
+        sscanf(time, "%d:%d:%d", &message.hour, &message.minute, &message.second);
+
+        strtok(NULL, " "); // )
+        strtok(NULL, " "); // LAT(
+        tok = strtok(NULL, " "); // latitude
         message.latitude = atof(tok);
-        tok = strtok(NULL, ","); // latitude sign
+        tok = strtok(NULL, " "); // latitude sign
         if ('S' == tok[0]) message.latitude = -message.latitude;
-        strtok(NULL, ","); // )
-        strtok(NULL, ","); // LONG(
-        tok = strtok(NULL, ","); // longitude
+        strtok(NULL, " "); // )
+        strtok(NULL, " "); // LONG(
+        tok = strtok(NULL, " "); // longitude
         message.longitude = atof(tok);
-        tok = strtok(NULL, ","); // longitude sign
+        tok = strtok(NULL, " "); // longitude sign
         if ('W' == tok[0]) message.longitude = -message.longitude;
-        strtok(NULL, ","); // )
-        strtok(NULL, ","); // POSITIONING(
+        strtok(NULL, " "); // )
+        strtok(NULL, " "); // POSITIONING(
 
     }
 
-    tok = strtok(NULL, ","); // positioning value
+    tok = strtok(NULL, " "); // positioning value
     message.positioning = atof(tok);
+
     
     return message;
 

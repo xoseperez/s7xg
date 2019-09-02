@@ -73,6 +73,12 @@ void loop() {
     if (message.fix) {
         Serial.print("Latitude   : "); Serial.println(message.latitude, 6);
         Serial.print("Longitude  : "); Serial.println(message.longitude, 6);
+        char buffer[40];
+        snprintf(
+            buffer, sizeof(buffer), "Datetime   : %04d-%02d-%02d %02d:%02d:%02d", 
+            message.year, message.month, message.day,
+            message.hour, message.minute, message.second);
+        Serial.println(buffer);
     }
     Serial.print("Positioning: "); Serial.println(message.positioning);
     Serial.println();

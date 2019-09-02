@@ -76,10 +76,15 @@ enum {
 
 typedef struct {
   bool fix;
-  uint32_t timestamp;
   float latitude;
   float longitude;
   float positioning;
+  int year;
+  int month;
+  int day;
+  int hour;
+  int minute;
+  int second;
 } gps_message_t;
 
 enum {
@@ -256,8 +261,6 @@ class S7XG {
     uint8_t _readLine(uint32_t timeout = S7XG_TIMEOUT);
     uint8_t _nibble(char ch);
     void _nice_delay(uint32_t ms);
-
-  protected:
 
     Stream *_stream;
     char _buffer[S7XG_RX_BUFFER_SIZE];
