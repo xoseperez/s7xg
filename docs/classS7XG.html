@@ -116,6 +116,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aaf63a218198408566b6289d73a49fa89"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classS7XG.html#aaf63a218198408566b6289d73a49fa89">macSave</a> ()</td></tr>
 <tr class="memdesc:aaf63a218198408566b6289d73a49fa89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves LoRaWAN configuration parameters to flash.  <a href="#aaf63a218198408566b6289d73a49fa89">More...</a><br /></td></tr>
 <tr class="separator:aaf63a218198408566b6289d73a49fa89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32b291b1728cbef459689dd090ab2788"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classS7XG.html#a32b291b1728cbef459689dd090ab2788">macJoined</a> ()</td></tr>
+<tr class="memdesc:a32b291b1728cbef459689dd090ab2788"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the device is connected to the LoRaWAN network.  <a href="#a32b291b1728cbef459689dd090ab2788">More...</a><br /></td></tr>
+<tr class="separator:a32b291b1728cbef459689dd090ab2788"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad16a6bd80c2f1f8004d1099de9ee4bbb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classS7XG.html#ad16a6bd80c2f1f8004d1099de9ee4bbb">macPower</a> (uint8_t power)</td></tr>
 <tr class="memdesc:ad16a6bd80c2f1f8004d1099de9ee4bbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the transmission power.  <a href="#ad16a6bd80c2f1f8004d1099de9ee4bbb">More...</a><br /></td></tr>
 <tr class="separator:ad16a6bd80c2f1f8004d1099de9ee4bbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -125,15 +128,39 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abaaad457ef99e43602536c7550f63869"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classS7XG.html#abaaad457ef99e43602536c7550f63869">macADR</a> (bool adr)</td></tr>
 <tr class="memdesc:abaaad457ef99e43602536c7550f63869"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the Adaptative Data Rate.  <a href="#abaaad457ef99e43602536c7550f63869">More...</a><br /></td></tr>
 <tr class="separator:abaaad457ef99e43602536c7550f63869"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af42eb730c3374220b25bf357fbf7df23"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classS7XG.html#af42eb730c3374220b25bf357fbf7df23">macRetries</a> (uint8_t times)</td></tr>
+<tr class="memdesc:af42eb730c3374220b25bf357fbf7df23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the number of TX retries.  <a href="#af42eb730c3374220b25bf357fbf7df23">More...</a><br /></td></tr>
+<tr class="separator:af42eb730c3374220b25bf357fbf7df23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6e43e41245e49c1802f13fd8f7024e4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classS7XG.html#ad6e43e41245e49c1802f13fd8f7024e4">macSync</a> (uint8_t sync)</td></tr>
+<tr class="memdesc:ad6e43e41245e49c1802f13fd8f7024e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the sync word.  <a href="#ad6e43e41245e49c1802f13fd8f7024e4">More...</a><br /></td></tr>
+<tr class="separator:ad6e43e41245e49c1802f13fd8f7024e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31d1793bdd5ada9627279c42efa42c36"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classS7XG.html#a31d1793bdd5ada9627279c42efa42c36">macChannelFrequency</a> (uint8_t channel, uint32_t frequency)</td></tr>
+<tr class="memdesc:a31d1793bdd5ada9627279c42efa42c36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the channel frequency.  <a href="#a31d1793bdd5ada9627279c42efa42c36">More...</a><br /></td></tr>
+<tr class="separator:a31d1793bdd5ada9627279c42efa42c36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96463e8eca7b366eecc4bc3963996a1e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classS7XG.html#a96463e8eca7b366eecc4bc3963996a1e">macChannelStatus</a> (uint8_t channel, bool status)</td></tr>
 <tr class="memdesc:a96463e8eca7b366eecc4bc3963996a1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disable a certain channel.  <a href="#a96463e8eca7b366eecc4bc3963996a1e">More...</a><br /></td></tr>
 <tr class="separator:a96463e8eca7b366eecc4bc3963996a1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72c4b23404ee5f7b7df9adee7cff102d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classS7XG.html#a72c4b23404ee5f7b7df9adee7cff102d">macDutyCycle</a> (bool dc)</td></tr>
 <tr class="memdesc:a72c4b23404ee5f7b7df9adee7cff102d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disable the duty cycle check.  <a href="#a72c4b23404ee5f7b7df9adee7cff102d">More...</a><br /></td></tr>
 <tr class="separator:a72c4b23404ee5f7b7df9adee7cff102d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfa773cf951702c2fe7e419761884d5c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classS7XG.html#abfa773cf951702c2fe7e419761884d5c">macUpCounter</a> (uint32_t counter)</td></tr>
+<tr class="memdesc:abfa773cf951702c2fe7e419761884d5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets de current uplink counter.  <a href="#abfa773cf951702c2fe7e419761884d5c">More...</a><br /></td></tr>
+<tr class="separator:abfa773cf951702c2fe7e419761884d5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13eaac653762b6f8bca64ae405c51346"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classS7XG.html#a13eaac653762b6f8bca64ae405c51346">macDownCounter</a> (uint32_t counter)</td></tr>
+<tr class="memdesc:a13eaac653762b6f8bca64ae405c51346"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets de current uplink counter.  <a href="#a13eaac653762b6f8bca64ae405c51346">More...</a><br /></td></tr>
+<tr class="separator:a13eaac653762b6f8bca64ae405c51346"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a249dd895a8a66cf916e7a5935a7dc0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classS7XG.html#a6a249dd895a8a66cf916e7a5935a7dc0">macClass</a> (uint8_t value)</td></tr>
+<tr class="memdesc:a6a249dd895a8a66cf916e7a5935a7dc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets de device class.  <a href="#a6a249dd895a8a66cf916e7a5935a7dc0">More...</a><br /></td></tr>
+<tr class="separator:a6a249dd895a8a66cf916e7a5935a7dc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93e16d19a2df59feb361a7149a7478fa"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classS7XG.html#a93e16d19a2df59feb361a7149a7478fa">macBand</a> ()</td></tr>
 <tr class="memdesc:a93e16d19a2df59feb361a7149a7478fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current frequency plan.  <a href="#a93e16d19a2df59feb361a7149a7478fa">More...</a><br /></td></tr>
 <tr class="separator:a93e16d19a2df59feb361a7149a7478fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab58ed1d764245747a57a2e4d111d7a29"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classS7XG.html#ab58ed1d764245747a57a2e4d111d7a29">macUpCounter</a> ()</td></tr>
+<tr class="memdesc:ab58ed1d764245747a57a2e4d111d7a29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current uplink counter.  <a href="#ab58ed1d764245747a57a2e4d111d7a29">More...</a><br /></td></tr>
+<tr class="separator:ab58ed1d764245747a57a2e4d111d7a29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e179ee9bc3f120011c50b6ca28b2c49"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classS7XG.html#a3e179ee9bc3f120011c50b6ca28b2c49">macDownCounter</a> ()</td></tr>
+<tr class="memdesc:a3e179ee9bc3f120011c50b6ca28b2c49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current downlink counter.  <a href="#a3e179ee9bc3f120011c50b6ca28b2c49">More...</a><br /></td></tr>
+<tr class="separator:a3e179ee9bc3f120011c50b6ca28b2c49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf59d41dbba8643c2659b11da5918692"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classS7XG.html#acf59d41dbba8643c2659b11da5918692">txCycle</a> (uint32_t seconds)</td></tr>
 <tr class="memdesc:acf59d41dbba8643c2659b11da5918692"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the auto uplink cycle in seconds (set to 0 to disable)  <a href="#acf59d41dbba8643c2659b11da5918692">More...</a><br /></td></tr>
 <tr class="separator:acf59d41dbba8643c2659b11da5918692"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -146,6 +173,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a517469e32105d5b2ae6ebf69d60e9d13"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classS7XG.html#a517469e32105d5b2ae6ebf69d60e9d13">gpsFormat</a> (uint8_t format)</td></tr>
 <tr class="memdesc:a517469e32105d5b2ae6ebf69d60e9d13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the auto uplink format.  <a href="#a517469e32105d5b2ae6ebf69d60e9d13">More...</a><br /></td></tr>
 <tr class="separator:a517469e32105d5b2ae6ebf69d60e9d13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af495c81b555e897ca9b7da7f4afccc4d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classS7XG.html#af495c81b555e897ca9b7da7f4afccc4d">gpsCycle</a> (uint32_t seconds)</td></tr>
+<tr class="memdesc:af495c81b555e897ca9b7da7f4afccc4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the GPS positioning cycle.  <a href="#af495c81b555e897ca9b7da7f4afccc4d">More...</a><br /></td></tr>
+<tr class="separator:af495c81b555e897ca9b7da7f4afccc4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af620ad6eb6d003278de85f3d7e36a5cd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classS7XG.html#af620ad6eb6d003278de85f3d7e36a5cd">gpsMode</a> (uint8_t mode)</td></tr>
 <tr class="memdesc:af620ad6eb6d003278de85f3d7e36a5cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the GPS mode.  <a href="#af620ad6eb6d003278de85f3d7e36a5cd">More...</a><br /></td></tr>
 <tr class="separator:af620ad6eb6d003278de85f3d7e36a5cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -160,6 +190,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:adcd336eebc8a7f347cd84e83161d3e1d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classS7XG.html#adcd336eebc8a7f347cd84e83161d3e1d">gpsWake</a> ()</td></tr>
 <tr class="memdesc:adcd336eebc8a7f347cd84e83161d3e1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wakes the GPS from sleep mode.  <a href="#adcd336eebc8a7f347cd84e83161d3e1d">More...</a><br /></td></tr>
 <tr class="separator:adcd336eebc8a7f347cd84e83161d3e1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30e569caddac0def18187e23995df914"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classS7XG.html#a30e569caddac0def18187e23995df914">gpsReset</a> ()</td></tr>
+<tr class="memdesc:a30e569caddac0def18187e23995df914"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the GPS module inside the <a class="el" href="classS7XG.html">S7XG</a>.  <a href="#a30e569caddac0def18187e23995df914">More...</a><br /></td></tr>
+<tr class="separator:a30e569caddac0def18187e23995df914"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8132545ff6370735b34ff439dd9b86b9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classS7XG.html#a8132545ff6370735b34ff439dd9b86b9">gpsSystem</a> (uint8_t system)</td></tr>
+<tr class="memdesc:a8132545ff6370735b34ff439dd9b86b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the GPS satellite system.  <a href="#a8132545ff6370735b34ff439dd9b86b9">More...</a><br /></td></tr>
+<tr class="separator:a8132545ff6370735b34ff439dd9b86b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fd96eb0db48aac341f87e70cc775748"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classS7XG.html#a5fd96eb0db48aac341f87e70cc775748">gpsStart</a> (uint8_t mode)</td></tr>
+<tr class="memdesc:a5fd96eb0db48aac341f87e70cc775748"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the GPS start mode.  <a href="#a5fd96eb0db48aac341f87e70cc775748">More...</a><br /></td></tr>
+<tr class="separator:a5fd96eb0db48aac341f87e70cc775748"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7279759ffaa7d3f3291be3e77db965c9"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classS7XG.html#a7279759ffaa7d3f3291be3e77db965c9">hexlify</a> (uint8_t *source, char *destination, uint8_t len)</td></tr>
 <tr class="memdesc:a7279759ffaa7d3f3291be3e77db965c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turns a byte array into and hexa-string.  <a href="#a7279759ffaa7d3f3291be3e77db965c9">More...</a><br /></td></tr>
 <tr class="separator:a7279759ffaa7d3f3291be3e77db965c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -206,7 +245,7 @@ Protected Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="S7XG_8h_source.html#l00222">222</a> of file <a class="el" href="S7XG_8h_source.html">S7XG.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="S7XG_8h_source.html#l00238">238</a> of file <a class="el" href="S7XG_8h_source.html">S7XG.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a7fec98d6580a8de981f0d1a05b3a3c16"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7fec98d6580a8de981f0d1a05b3a3c16">&#9670;&nbsp;</a></span>_flush()</h2>
@@ -233,7 +272,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Flushes the serial line. </p>
 
-<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00459">459</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00575">575</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
 
 </div>
 </div>
@@ -270,7 +309,7 @@ Protected Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Decimal value or 0 if error </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00560">560</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00676">676</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
 
 </div>
 </div>
@@ -306,7 +345,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00571">571</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00687">687</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
 
 </div>
 </div>
@@ -336,7 +375,7 @@ Protected Attributes</h2></td></tr>
 <p>Reads a line from the module. </p>
 <p class="">Stores in the internal buffer from the first "&gt;&gt; " to the next 0x0A. </p><dl class="section return"><dt>Returns</dt><dd>Number of characters in the buffer </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00468">468</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00584">584</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
 
 </div>
 </div>
@@ -374,7 +413,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00511">511</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00627">627</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
 
 </div>
 </div>
@@ -422,7 +461,7 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if the module answered "Ok" </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00534">534</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00650">650</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
 
 </div>
 </div>
@@ -461,7 +500,7 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to the internal buffer with the answer </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00521">521</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00637">637</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
 
 </div>
 </div>
@@ -581,6 +620,35 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="af495c81b555e897ca9b7da7f4afccc4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af495c81b555e897ca9b7da7f4afccc4d">&#9670;&nbsp;</a></span>gpsCycle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool S7XG::gpsCycle </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>seconds</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the GPS positioning cycle. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">seconds</td><td>Seconds between GPS updates </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if everything OK </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00419">419</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
+
+</div>
+</div>
 <a id="a50dcf5ae222e45ed80d8059538389da1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a50dcf5ae222e45ed80d8059538389da1">&#9670;&nbsp;</a></span>gpsData()</h2>
 
@@ -599,7 +667,7 @@ template&lt;typename T &gt; </div>
 <p>Gets the data from the GPS in manual mode. </p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="structgps__message__t.html">gps_message_t</a> object with the data </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00355">355</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00442">442</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
 
 </div>
 </div>
@@ -628,7 +696,7 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if everything OK </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00328">328</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00406">406</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
 
 </div>
 </div>
@@ -650,7 +718,7 @@ template&lt;typename T &gt; </div>
 <p>Inits the GPS into manual mode. </p>
 <dl class="section return"><dt>Returns</dt><dd>True if everything OK </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00304">304</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00382">382</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
 
 </div>
 </div>
@@ -679,7 +747,7 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if everything OK </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00341">341</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00428">428</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
 
 </div>
 </div>
@@ -719,13 +787,35 @@ template&lt;typename T &gt; </div>
 <p>Sets the auto uplink port. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">port</td><td>port to send messages to when in auto mode </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">port</td><td>Port to send messages to when in auto mode </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if everything OK </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00319">319</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00397">397</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a30e569caddac0def18187e23995df914"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30e569caddac0def18187e23995df914">&#9670;&nbsp;</a></span>gpsReset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool S7XG::gpsReset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resets the GPS module inside the <a class="el" href="classS7XG.html">S7XG</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if everything OK </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00511">511</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
 
 </div>
 </div>
@@ -754,7 +844,65 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if everything OK </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00408">408</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00495">495</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a5fd96eb0db48aac341f87e70cc775748"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fd96eb0db48aac341f87e70cc775748">&#9670;&nbsp;</a></span>gpsStart()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool S7XG::gpsStart </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>mode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the GPS start mode. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mode</td><td>One of S7XG_GPS_START_HOT, S7XG_GPS_START_WARM or S7XG_GPS_START_COLD </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if everything OK </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00529">529</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a8132545ff6370735b34ff439dd9b86b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8132545ff6370735b34ff439dd9b86b9">&#9670;&nbsp;</a></span>gpsSystem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool S7XG::gpsSystem </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>system</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the GPS satellite system. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mode</td><td>One of S7XG_GPS_SYSTEM_GPS or S7XG_GPS_SYSTEM_HYBRID </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if everything OK </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00520">520</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
 
 </div>
 </div>
@@ -776,7 +924,7 @@ template&lt;typename T &gt; </div>
 <p>Wakes the GPS from sleep mode. </p>
 <dl class="section return"><dt>Returns</dt><dd>True if everything OK </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00416">416</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00503">503</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
 
 </div>
 </div>
@@ -823,7 +971,7 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to the destination </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00445">445</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00561">561</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
 
 </div>
 </div>
@@ -852,7 +1000,7 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if everything OK </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00253">253</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00262">262</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
 
 </div>
 </div>
@@ -874,7 +1022,47 @@ template&lt;typename T &gt; </div>
 <p>Returns the current frequency plan. </p>
 <dl class="section return"><dt>Returns</dt><dd>Current band (470, 868, 915 or 923) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00280">280</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00344">344</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a31d1793bdd5ada9627279c42efa42c36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31d1793bdd5ada9627279c42efa42c36">&#9670;&nbsp;</a></span>macChannelFrequency()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool S7XG::macChannelFrequency </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>channel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>frequency</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the channel frequency. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>Channel ID (depends on band) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">frequency</td><td>Channel frequency in Hz </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if everything OK </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00290">290</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
 
 </div>
 </div>
@@ -914,7 +1102,36 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if everything OK </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00263">263</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00300">300</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a6a249dd895a8a66cf916e7a5935a7dc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a249dd895a8a66cf916e7a5935a7dc0">&#9670;&nbsp;</a></span>macClass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool S7XG::macClass </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets de device class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>One of S7XG_MAC_CLASS_A or S7XG_MAC_CLASS_C </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if everything OK </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00336">336</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
 
 </div>
 </div>
@@ -943,7 +1160,58 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if everything OK </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00244">244</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00253">253</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a13eaac653762b6f8bca64ae405c51346"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13eaac653762b6f8bca64ae405c51346">&#9670;&nbsp;</a></span>macDownCounter() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool S7XG::macDownCounter </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>counter</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets de current uplink counter. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">counter</td><td>New counter to set </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if everything OK </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00327">327</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a3e179ee9bc3f120011c50b6ca28b2c49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e179ee9bc3f120011c50b6ca28b2c49">&#9670;&nbsp;</a></span>macDownCounter() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t S7XG::macDownCounter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the current downlink counter. </p>
+<dl class="section return"><dt>Returns</dt><dd>Current downlink cunter </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00360">360</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
 
 </div>
 </div>
@@ -972,7 +1240,7 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if everything OK </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00272">272</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00309">309</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
 
 </div>
 </div>
@@ -1020,6 +1288,28 @@ template&lt;typename T &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>True if everything OK </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00169">169</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a32b291b1728cbef459689dd090ab2788"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32b291b1728cbef459689dd090ab2788">&#9670;&nbsp;</a></span>macJoined()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool S7XG::macJoined </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if the device is connected to the LoRaWAN network. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if connected </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00229">229</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
 
 </div>
 </div>
@@ -1135,7 +1425,36 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if everything OK </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00235">235</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00244">244</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
+
+</div>
+</div>
+<a id="af42eb730c3374220b25bf357fbf7df23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af42eb730c3374220b25bf357fbf7df23">&#9670;&nbsp;</a></span>macRetries()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool S7XG::macRetries </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>times</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the number of TX retries. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">times</td><td>A number from 0 to 255 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if everything OK </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00271">271</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
 
 </div>
 </div>
@@ -1262,6 +1581,86 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="ad6e43e41245e49c1802f13fd8f7024e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6e43e41245e49c1802f13fd8f7024e4">&#9670;&nbsp;</a></span>macSync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool S7XG::macSync </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>sync</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the sync word. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">times</td><td>A number from 0 to 255 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if everything OK </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00280">280</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
+
+</div>
+</div>
+<a id="abfa773cf951702c2fe7e419761884d5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfa773cf951702c2fe7e419761884d5c">&#9670;&nbsp;</a></span>macUpCounter() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool S7XG::macUpCounter </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>counter</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets de current uplink counter. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">counter</td><td>New counter to set </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if everything OK </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00318">318</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ab58ed1d764245747a57a2e4d111d7a29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab58ed1d764245747a57a2e4d111d7a29">&#9670;&nbsp;</a></span>macUpCounter() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t S7XG::macUpCounter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the current uplink counter. </p>
+<dl class="section return"><dt>Returns</dt><dd>Current uplink cunter </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00352">352</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
+
+</div>
+</div>
 <a id="aedf779b3cb55bb87c22604be1822c62b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aedf779b3cb55bb87c22604be1822c62b">&#9670;&nbsp;</a></span>reset()</h2>
 
@@ -1337,7 +1736,7 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if everything OK </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00289">289</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00369">369</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
 
 </div>
 </div>
@@ -1384,7 +1783,7 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to the destination array </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00431">431</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="S7XG_8cpp_source.html#l00547">547</a> of file <a class="el" href="S7XG_8cpp_source.html">S7XG.cpp</a>.</p>
 
 </div>
 </div>
@@ -1431,7 +1830,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="S7XG_8h_source.html#l00278">278</a> of file <a class="el" href="S7XG_8h_source.html">S7XG.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="S7XG_8h_source.html#l00307">307</a> of file <a class="el" href="S7XG_8h_source.html">S7XG.h</a>.</p>
 
 </div>
 </div>
@@ -1455,7 +1854,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="S7XG_8h_source.html#l00279">279</a> of file <a class="el" href="S7XG_8h_source.html">S7XG.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="S7XG_8h_source.html#l00308">308</a> of file <a class="el" href="S7XG_8h_source.html">S7XG.h</a>.</p>
 
 </div>
 </div>
@@ -1479,7 +1878,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="S7XG_8h_source.html#l00276">276</a> of file <a class="el" href="S7XG_8h_source.html">S7XG.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="S7XG_8h_source.html#l00305">305</a> of file <a class="el" href="S7XG_8h_source.html">S7XG.h</a>.</p>
 
 </div>
 </div>
@@ -1503,7 +1902,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="S7XG_8h_source.html#l00277">277</a> of file <a class="el" href="S7XG_8h_source.html">S7XG.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="S7XG_8h_source.html#l00306">306</a> of file <a class="el" href="S7XG_8h_source.html">S7XG.h</a>.</p>
 
 </div>
 </div>

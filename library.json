@@ -1,7 +1,7 @@
 {
     "name": "S7XG",
     "keywords": "acsip,s76g,s78g,s76s,s78s,lora,lorawan,gps",
-    "description": "AcSIP S7XG LoRaWAN/GPS module library",
+    "description": "AcSIP S76G and S78G LoRaWAN/GPS module library",
     "repository": {
         "type": "git",
         "url": "https://github.com/xoseperez/s7xg.git"
