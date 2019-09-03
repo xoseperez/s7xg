@@ -223,6 +223,15 @@ bool S7XG::macSave() {
 }
 
 /**
+ * @brief               Checks if the device is connected to the LoRaWAN network
+ * @return              True if connected
+ */
+bool S7XG::macJoined() {
+    char * buffer = _sendAndReturn(MAC_GET_JOIN_STATUS);
+    return (0 == strcmp(buffer, "joined"));
+}
+
+/**
  * @brief               Sets the transmission power.
  * @details             According to datasheet: "it can be 2, 5, 8, 11, 14, 20 (non-915 band); 
  *                      30, 28, 26, 24, 22, 20, 18, 16, 14, 12, 10 (915 band); 1
@@ -255,6 +264,34 @@ bool S7XG::macADR(bool adr) {
 }
 
 /**
+ * @brief               Sets the number of TX retries
+ * @param[in] times     A number from 0 to 255
+ * @return              True if everything OK
+ */
+bool S7XG::macRetries(uint8_t times) {
+    return _sendAndACK(MAC_SET_TXRETRY, times);
+}
+
+/**
+ * @brief               Sets the sync word
+ * @param[in] times     A number from 0 to 255
+ * @return              True if everything OK
+ */
+bool S7XG::macSync(uint8_t sync) {
+    return _sendAndACK(MAC_SET_SYNC, sync);
+}
+
+/**
+ * @brief               Sets the channel frequency
+ * @param[in] channel   Channel ID (depends on band)
+ * @param[in] frequency Channel frequency in Hz
+ * @return              True if everything OK
+ */
+bool S7XG::macChannelFrequency(uint8_t channel, uint32_t frequency) {
+    return _sendAndACK(MAC_SET_CH_FREQ, channel, frequency);
+}
+
+/**
  * @brief               Enables or disable a certain channel
  * @param[in] channel   Channel ID (depends on band)
  * @param[in] status    True or false
@@ -274,6 +311,33 @@ bool S7XG::macDutyCycle(bool dc) {
 }
 
 /**
+ * @brief               Sets de current uplink counter
+ * @param[in] counter   New counter to set
+ * @return              True if everything OK
+ */
+bool S7XG::macUpCounter(uint32_t counter) {
+    return _sendAndACK(MAC_SET_UPCNT, counter);
+}
+
+/**
+ * @brief               Sets de current uplink counter
+ * @param[in] counter   New counter to set
+ * @return              True if everything OK
+ */
+bool S7XG::macDownCounter(uint32_t counter) {
+    return _sendAndACK(MAC_SET_DOWNCNT, counter);
+}
+
+/**
+ * @brief               Sets de device class
+ * @param[in] value     One of S7XG_MAC_CLASS_A or S7XG_MAC_CLASS_C
+ * @return              True if everything OK
+ */
+bool S7XG::macClass(uint8_t value) {
+    return _sendAndACK(MAC_SET_CLASS, value);
+}
+
+/**
  * @brief               Returns the current frequency plan
  * @return              Current band (470, 868, 915 or 923)
  */
@@ -282,15 +346,29 @@ uint16_t S7XG::macBand() {
 }
 
 /**
+ * @brief               Returns the current uplink counter
+ * @return              Current uplink cunter
+ */
+uint32_t S7XG::macUpCounter() {
+    return atol(_sendAndReturn(MAC_GET_UPCNT));
+}
+
+/**
+ * @brief               Returns the current downlink counter
+ * @return              Current downlink cunter
+ */
+uint32_t S7XG::macDownCounter() {
+    return atol(_sendAndReturn(MAC_GET_DOWNCNT));
+}
+
+/**
  * @brief               Sets the auto uplink cycle in seconds (set to 0 to disable)
  * @param[in] seconds   Seconds between messages
  * @return              True if everything OK
  */
 bool S7XG::txCycle(uint32_t seconds) {
-    
     if (!_sendAndACK(MAC_SET_TX_MODE, 0 == seconds ? "no_cycle" : "cycle"));
     return _sendAndACK(MAC_SET_TX_INTERVAL, seconds * 1000UL);
-    
 }
 
 // ----------------------------------------------------------------------------
@@ -313,7 +391,7 @@ bool S7XG::gpsInit() {
 
 /**
  * @brief               Sets the auto uplink port
- * @param[in] port      port to send messages to when in auto mode
+ * @param[in] port      Port to send messages to when in auto mode
  * @return              True if everything OK
  */
 bool S7XG::gpsPort(uint8_t port) {
@@ -331,6 +409,15 @@ bool S7XG::gpsFormat(uint8_t format) {
         format == S7XG_GPS_FORMAT_IPSO ? "ipso" : 
         format == S7XG_GPS_FORMAT_KIWI ? "kiwi" : 
         "utc_pos");
+}
+
+/**
+ * @brief               Sets the GPS positioning cycle
+ * @param[in] seconds   Seconds between GPS updates
+ * @return              True if everything OK
+ */
+bool S7XG::gpsCycle(uint32_t seconds) {
+    return _sendAndACK(GPS_SET_POSITIONING_CYCLE, seconds * 1000UL);
 }
 
 /**
@@ -415,6 +502,35 @@ bool S7XG::gpsSleep(bool deep) {
  */
 bool S7XG::gpsWake() {
     return _sendAndACK(GPS_SLEEP_OFF);
+}
+
+/**
+ * @brief               Resets the GPS module inside the S7XG
+ * @return              True if everything OK
+ */
+bool S7XG::gpsReset() {
+    return _sendAndACK(GPS_RESET);
+}
+
+/**
+ * @brief               Sets the GPS satellite system
+ * @param[in] mode      One of S7XG_GPS_SYSTEM_GPS or S7XG_GPS_SYSTEM_HYBRID
+ * @return              True if everything OK
+ */
+bool S7XG::gpsSystem(uint8_t system) {
+    return _sendAndACK(GPS_SET_SATELLITE_SYSTEM, system == S7XG_GPS_SYSTEM_GPS ? "gps" : "hybrid");
+}
+
+/**
+ * @brief               Sets the GPS start mode
+ * @param[in] mode      One of S7XG_GPS_START_HOT, S7XG_GPS_START_WARM or S7XG_GPS_START_COLD
+ * @return              True if everything OK
+ */
+bool S7XG::gpsStart(uint8_t mode) {
+    return _sendAndACK(GPS_SET_START, 
+        mode == S7XG_GPS_START_HOT ? "hot" : 
+        mode == S7XG_GPS_START_WARM ? "warm" : 
+        "cold");
 }
 
 // ----------------------------------------------------------------------------

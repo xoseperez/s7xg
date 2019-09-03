@@ -81,6 +81,19 @@ void loop() {
 
 There are more examples in the `examples` folder.
 
+## TODO
+
+Future features:
+
+* Link budget check (mac set_linkchk)
+* Auto JOIN
+* Set delay, datarate and frequency of RX windows
+* Fine channel and band control
+* LBT support
+* Several LoRaWAN 1.0.2 features (dwell, EIRP,...)
+* GPS TTFF
+* Getters :)
+
 ## License
 
 Copyright (C) 2019 by Xose Pérez <xose dot perez at gmail dot com>

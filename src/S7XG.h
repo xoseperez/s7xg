@@ -71,6 +71,11 @@ enum {
 
 };
 
+enum {
+  S7XG_MAC_CLASS_A = 'A',
+  S7XG_MAC_CLASS_C = 'C',
+};
+
 // ----------------------------------------------------------------------------
 // GPS
 // ----------------------------------------------------------------------------
@@ -99,6 +104,17 @@ enum {
   S7XG_GPS_FORMAT_IPSO,
   S7XG_GPS_FORMAT_KIWI,
   S7XG_GPS_FORMAT_UTC_POS,
+};
+
+enum {
+  S7XG_GPS_START_HOT = 0,
+  S7XG_GPS_START_WARM,
+  S7XG_GPS_START_COLD,
+};
+
+enum {
+  S7XG_GPS_SYSTEM_GPS = 0,
+  S7XG_GPS_SYSTEM_HYBRID,
 };
 
 // ----------------------------------------------------------------------------
@@ -240,23 +256,36 @@ class S7XG {
     bool macJoinOTAA(const char * deveui, const char * appeui, const char * appkey);
     bool macJoinOTAA(const char * appeui, const char * appkey);
     bool macSave();
+    bool macJoined();
     bool macPower(uint8_t power);
     bool macDatarate(uint8_t dr);
     bool macADR(bool adr);
+    bool macRetries(uint8_t times);
+    bool macSync(uint8_t sync);
+    bool macChannelFrequency(uint8_t channel, uint32_t frequency);
     bool macChannelStatus(uint8_t channel, bool status);
     bool macDutyCycle(bool dc);
+    bool macUpCounter(uint32_t counter);
+    bool macDownCounter(uint32_t counter);
+    bool macClass(uint8_t value);
     uint16_t macBand();
+    uint32_t macUpCounter();
+    uint32_t macDownCounter();
     bool txCycle(uint32_t seconds);
 
     // GPS
     bool gpsInit();
     bool gpsPort(uint8_t port);
     bool gpsFormat(uint8_t format);
+    bool gpsCycle(uint32_t seconds);
     bool gpsMode(uint8_t mode);
     uint8_t gpsMode();
     gps_message_t gpsData();
     bool gpsSleep(bool deep);
     bool gpsWake();
+    bool gpsReset();
+    bool gpsSystem(uint8_t system);
+    bool gpsStart(uint8_t mode);
 
     // Utils
     char * hexlify(uint8_t * source, char * destination, uint8_t len);
