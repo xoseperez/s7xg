@@ -28,7 +28,7 @@ along with the S7XG library.  If not, see <http://www.gnu.org/licenses/>.
 // ----------------------------------------------------------------------------
 
 #define S7XG_SHORT_TIMEOUT                    300
-#define S7XG_LONG_TIMEOUT                     10000
+#define S7XG_LONG_TIMEOUT                     5000
 #define S7XG_RX_BUFFER_SIZE                   128
 #define S7XG_TX_BUFFER_SIZE                   128
 
@@ -257,6 +257,7 @@ class S7XG {
     bool macJoinOTAA(const char * appeui, const char * appkey);
     bool macSave();
     bool macJoined();
+    bool macWaitJoined(uint32_t timeout = 10000);
     bool macPower(uint8_t power);
     bool macDatarate(uint8_t dr);
     bool macADR(bool adr);

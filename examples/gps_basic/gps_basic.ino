@@ -21,13 +21,13 @@ along with the S7XG library.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 
-#include "S7XG.h"
-
 #ifndef ARDUINO_ARCH_ESP32
     #error "This scketch is meant to run on an ESP32 board"
 #endif
 
 HardwareSerial SerialS7XG(1);
+
+#include "S7XG.h"
 S7XG module;
 
 // This is required for the TTGO-T-Watch
@@ -51,27 +51,35 @@ void setup() {
         Wire.begin(21, 22);
         axp.begin(Wire);
         s7xg_power(false);
-        delay(100);
+        delay(1000);
         s7xg_power(true);
     #endif
 
+    // Init connection to the PC
     Serial.begin(115200);
     delay(2000);
     Serial.println();
     Serial.println("[INFO ] S7XG basic GPS");
     Serial.println();
 
+    // Init connection to the module
     SerialS7XG.begin(115200, SERIAL_8N1, 34, 33);
     module.begin(SerialS7XG);
+
+    // Initialize GPS (5s cycle, manual mode, gps system, hot start,...)
     module.gpsInit();
 
 }
 
 void loop() {
     
+    // Every 5 seconds
     delay(5000);
     
+    // Retrieve localization from the GPS
     gps_message_t message = module.gpsData();
+    
+    // Print it
     if (message.fix) {
         Serial.print("Latitude   : "); Serial.println(message.latitude, 6);
         Serial.print("Longitude  : "); Serial.println(message.longitude, 6);

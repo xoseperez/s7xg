@@ -22,13 +22,13 @@ along with the S7XG library.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 
-#include "S7XG.h"
-
 #ifndef ARDUINO_ARCH_ESP32
     #error "This scketch is meant to run on an ESP32 board"
 #endif
 
 HardwareSerial SerialS7XG(1);
+
+#include "S7XG.h"
 S7XG module;
 
 // This is required for the TTGO-T-Watch
@@ -56,7 +56,7 @@ void setup() {
         Wire.begin(21, 22);
         axp.begin(Wire);
         s7xg_power(false);
-        delay(100);
+        delay(1000);
         s7xg_power(true);
     #endif
 
@@ -64,12 +64,16 @@ void setup() {
     Serial.begin(115200);
     delay(2000);
     Serial.println();
-    Serial.println("[INFO ] S7XG basic GPS");
+    Serial.println("[INFO ] S7XG auto GPS report");
     Serial.println();
 
     // Init connection to the module
     SerialS7XG.begin(115200, SERIAL_8N1, 34, 33);
     module.begin(SerialS7XG);
+
+    // Show the Device EUI
+    Serial.print  ("[INFO ] Device EUI: ");
+    Serial.println(module.getEUI());
 
     // Transmit at max power ETSI allows
     module.macPower(14);

@@ -48,6 +48,8 @@ void setup() {
     #if defined(ARDUINO_T_WATCH)
         Wire.begin(21, 22);
         axp.begin(Wire);
+        s7xg_power(false);
+        delay(1000);
         s7xg_power(true);
     #endif
 

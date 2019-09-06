@@ -59,13 +59,14 @@ void setup() {
         s7xg_power(true);
     #endif
 
+    // Init PC connection
     Serial.begin(115200);
     delay(2000);
     Serial.println();
-    Serial.println("S7XG Module Info");
-    Serial.println("================");
+    Serial.println("[INFO ] S7XG Module Info");
     Serial.println();
 
+    // Init connection to the module
     #if defined(ARDUINO_ARCH_ESP32) 
         SerialS7XG.begin(115200, SERIAL_8N1, 34, 33);
     #else

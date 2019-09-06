@@ -172,12 +172,11 @@ bool S7XG::macJoinABP(const char * devaddr, const char * nwkskey, const char * a
     if (!_sendAndACK(MAC_SET_NWKSKEY, nwkskey)) return false;
     if (!_sendAndACK(MAC_SET_APPSKEY, appskey)) return false;
 
-    _send(MAC_JOIN_ABP);
+    _wait_longer = true;
+    if (!_sendAndACK(MAC_JOIN_ABP)) return false;
     _wait_longer = true;
     _readLine();
-    if (0 != strcmp(_buffer, "Ok")) return false;
-    _readLine();
-    return (0 == strcmp(_buffer, "accepted"));
+    return (0 == strcmp("accepted", _buffer));
 
 }
 
@@ -194,13 +193,8 @@ bool S7XG::macJoinOTAA(const char * deveui, const char * appeui, const char * ap
     if (!_sendAndACK(MAC_SET_APPEUI, appeui)) return false;
     if (!_sendAndACK(MAC_SET_APPKEY, appkey)) return false;
 
-    _send(MAC_JOIN_OTAA);
     _wait_longer = true;
-    _readLine();
-    if (0 != strcmp(_buffer, "Ok")) return false;
-    _wait_longer = true;
-    _readLine();
-    return (0 == strcmp(_buffer, "accepted"));
+    return _sendAndACK(MAC_JOIN_OTAA);
 
 }
 
@@ -229,6 +223,20 @@ bool S7XG::macSave() {
 bool S7XG::macJoined() {
     char * buffer = _sendAndReturn(MAC_GET_JOIN_STATUS);
     return (0 == strcmp(buffer, "joined"));
+}
+
+/**
+ * @brief               Blocks until joined
+ * @param[in] timeout   Timeout after these many milliseconds (defaults to 10s)
+ * @return              True if connected
+ */
+bool S7XG::macWaitJoined(uint32_t timeout) {
+    uint32_t start = millis();
+    while (millis() - start < timeout) {
+        if (macJoined()) return true;
+        _nice_delay(1000);
+    }
+    return false;
 }
 
 /**

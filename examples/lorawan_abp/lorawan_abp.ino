@@ -54,33 +54,50 @@ const char *appSKey = "EE0080DAB519CEF94E2EC83A110AA43A";
 
 void setup() {
     
-    // Power the S7XG module
+    // Reset the S7XG module power supply
     #if defined(ARDUINO_T_WATCH)
         Wire.begin(21, 22);
         axp.begin(Wire);
+        s7xg_power(false);
+        delay(1000);
         s7xg_power(true);
     #endif
 
+    // Init PC connection
     Serial.begin(115200);
     delay(2000);
     Serial.println();
-    Serial.println("[INFO ] S7XG Module Info");
+    Serial.println("[INFO ] LoRaWAN ABP join example");
     Serial.println();
 
+    // Init connection to the module
     SerialS7XG.begin(115200, SERIAL_8N1, 34, 33);
     module.begin(SerialS7XG);
-    module.gpsMode(S7XG_GPS_MODE_MANUAL);
+
+    // Show the Device EUI
+    Serial.print  ("[INFO ] Device EUI: ");
+    Serial.println(module.getEUI());
+
+    // Transmit at max power ETSI allows
     module.macPower(14);
+
+    // Use SF7 and BW125
     module.macDatarate(S7XG_DR_SF7BW125_EU);
+
+    // Do not use ADR (moving device)
     module.macADR(false);
+
+    // Disable duty cycle check (never do this in production!)
+    module.macDutyCycle(false);
 
     if (module.macJoinABP(devAddr, nwkSKey, appSKey)) {
         Serial.println("[INFO ] Joined!");
     } else {
-        Serial.print("[ERROR] Response: ");
-        Serial.println(module.getResponse());
+        Serial.println("[ERROR] Timeout while joining");
         while (true) delay(1);
     }
+
+    delay(1000);
 
 }
 
